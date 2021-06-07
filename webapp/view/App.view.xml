@@ -1,0 +1,70 @@
+<mvc:View
+    controllerName="be.wl.detailcomponent1.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form"
+	height="100%"
+>
+<!-- <App> -->
+	<f:DynamicPage>
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
+						<Title text="Flight details - {flightDetails/countryFrom} {flightDetails/cityFrom} => {flightDetails/countryTo} {flightDetails/cityTo}" wrapping="true" class="sapUiTinyMarginEnd"/>
+					</FlexBox>
+				</f:heading>
+
+					<f:actions>
+						<Button
+								text="More..."
+								type="Emphasized"
+								press=".showMore"/>
+					</f:actions>
+
+					<f:navigationActions>
+						<Button
+								icon="sap-icon://decline"
+								type="Transparent"
+								press=".goBack" />
+					</f:navigationActions>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:content>
+			<Label text="{carrid}"></Label>
+			<form:SimpleForm
+				editable="true"
+				layout="ResponsiveGridLayout"
+				labelSpanXL="3"
+				labelSpanL="3"
+				labelSpanM="3"
+				labelSpanS="12"
+				adjustLabelSpan="false"
+				emptySpanXL="4"
+				emptySpanL="4"
+				emptySpanM="4"
+				emptySpanS="0"
+				columnsXL="1"
+				columnsL="1"
+				columnsM="1"
+				singleContainerFullSize="false" >
+				<form:content>
+					<Label text="Carrid" />
+					<Input value="{carrid}" editable="{config>/EDITABLE}">
+					</Input>
+					<Label text="Connid" />
+					<Input value="{connid}" editable="{config>/EDITABLE}">
+					</Input>
+					<Label text="Fligth date" />
+					<Input value="{fldate}"  editable="{config>/EDITABLE}"/>
+					<Label text="Price" />
+					<Input value="{PRICE}"  editable="{config>/EDITABLE}"/>
+				</form:content>
+			</form:SimpleForm>
+		</f:content>
+	</f:DynamicPage>
+	<!-- </App> -->
+</mvc:View>
